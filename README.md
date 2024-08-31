@@ -30,3 +30,4 @@
 Following these coding guidelines will help keep our codebase clean, consistent, and easier to maintain. Trust me, your future self (and your fellow devs) will thank you!
 
 ## [Check them out here](https://gist.github.com/dhextras/77cffdb7eaaa574952828067c79de1a2)
+
