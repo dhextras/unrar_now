@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 bg-gray-100 border-b border-gray-200">
-      <a href="/home">
+      <Link href="/">
         <div className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl">
           <svg
             className="w-6 h-6"
@@ -21,14 +23,14 @@ export default function Header() {
             <path d="M13 15l-1 0"></path>
           </svg>
         </div>
-      </a>
+      </Link>
       <nav className="flex space-x-4">
-        <a href="/" className="text-black underline">
-          home
-        </a>
-        <a href="/common-questions" className="text-black underline">
-          common questions
-        </a>
+        <Link href="/" className="text-black underline">
+          Home
+        </Link>
+        <Link href="/common-questions" className="text-black underline">
+          Common Questions
+        </Link>
       </nav>
     </header>
   );
