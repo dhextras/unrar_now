@@ -1,12 +1,8 @@
-import { Inter } from "next/font/google";
-
-import Header from "@/app/components/Header";
+import Header from "@/components/Header";
 
 import type { Metadata } from "next";
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Unrar Now",
@@ -20,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="absolute inset-0 flex flex-col bg-white">
         <Header />
-        {children}
+        <main className="flex-grow overflow-y-auto">{children}</main>
       </body>
     </html>
   );

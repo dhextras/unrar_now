@@ -1,6 +1,6 @@
 # Unrar Now
 
-> Unrar Any files securely within seconds
+> Unrar Any files securely within seconds ( Blazzzzingly fast )
 
 ## Installation
 
