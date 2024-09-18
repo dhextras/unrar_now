@@ -255,18 +255,18 @@ export default function Home() {
             <div className="font-semibold">What is a RAR file?</div>
             <p className="text-sm mt-2">
               A RAR file is a compressed archive format used to store one or
-              more files in a compressed state. RAR stands for 'Roshal Archive,'
-              named after its creator, Eugene Roshal. It is a proprietary format
-              commonly associated with the WinRAR software, which is widely used
-              to create and extract RAR files.
+              more files in a compressed state. RAR stands for &apos;Roshal
+              Archive,&apos; named after its creator, Eugene Roshal. It is a
+              proprietary format commonly associated with the WinRAR software,
+              which is widely used to create and extract RAR files.
             </p>
           </li>
           <li className="border border-gray-300 bg-gray-100 rounded-md p-4">
             <div className="font-semibold">How to unzip a RAR file?</div>
             <p className="text-sm mt-2">
-              The easiest way to extract RAR files is to use our website. It's
-              free, simple, and secure—no software download or purchase
-              required.
+              The easiest way to extract RAR files is to use our website.
+              It&apos;s free, simple, and secure—no software download or
+              purchase required.
             </p>
           </li>
           <li className="border border-gray-300 bg-gray-100 rounded-md p-4">
