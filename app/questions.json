@@ -1,7 +1,7 @@
 [
   {
     "question": "What is a RAR file?",
-    "answer": "A RAR (Roshal Archive) file is a compressed file format that supports data compression, error recovery, and file spanning. It's used to reduce the size of files for storage or transfer."
+    "answer": "A RAR (Roshal Archive) file is a type of compressed archive file that uses the RAR format to store one or more files in a compressed form. Developed by Eugene Roshal, the RAR format reduces file sizes to save disk space and facilitate easier transfer over the internet. RAR files are commonly used for packaging and compressing files into a single, smaller archive, making them easier to manage and share."
   },
   {
     "question": "How do I open a RAR file?",

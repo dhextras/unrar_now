@@ -17,13 +17,13 @@ export default function CommonQuestions() {
         Common Questions About RAR files
       </h1>
       <p className="text-sm mt-4">
-        Explore our informative blog on RAR files to learn how to open, extract,
-        and manage these compressed file formats.
+        Check out our informative blog on RAR files to learn how to open,
+        extract, and manage these compressed file formats.
       </p>
       <p className="text-sm mt-2">
-        Discover useful tips, step-by-step guides, and recommended software
-        options. Stay up-to-date with the latest insights and make the most of
-        your RAR files.
+        Find helpful tips, detailed guides, and recommendations for software.
+        Stay informed with the latest updates and make the most of your RAR
+        files.
       </p>
       <ol className="mt-8 space-y-2">
         {questions.map((q, i) => (

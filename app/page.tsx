@@ -34,20 +34,20 @@ export default function Home() {
           files: (fileHeader) => !fileHeader.flags.encrypted,
         });
         const fileArray = Array.from(files).filter(
-          (file: ArcFile<Uint8Array>) => !file.fileHeader.flags.directory
+          (file: ArcFile<Uint8Array>) => !file.fileHeader.flags.directory,
         );
         setFiles(fileArray);
       } catch (err) {
         if (err instanceof UnrarError) {
           alert(
-            `Unrar exception: Reason[${err.reason}], Message: [${err.message}]`
+            `Unrar exception: Reason[${err.reason}], Message: [${err.message}]`,
           );
         }
       } finally {
         setLoading(false);
       }
     },
-    [readRarFile]
+    [readRarFile],
   );
 
   const handleFileChange = useCallback(
@@ -57,7 +57,7 @@ export default function Home() {
         handleFile(file);
       }
     },
-    [handleFile]
+    [handleFile],
   );
 
   const handleDragOver = useCallback(
@@ -65,7 +65,7 @@ export default function Home() {
       event.preventDefault();
       event.stopPropagation();
     },
-    []
+    [],
   );
 
   const handleDrop = useCallback(
@@ -79,7 +79,7 @@ export default function Home() {
         alert("Please drop a valid .rar file.");
       }
     },
-    [handleFile]
+    [handleFile],
   );
 
   const formatFileSize = (size: number): string => {
@@ -94,7 +94,7 @@ export default function Home() {
     files.forEach((file) => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(
-        new Blob([file.extraction || ""], { type: "application/octet-stream" })
+        new Blob([file.extraction || ""], { type: "application/octet-stream" }),
       );
       link.download = file.fileHeader.name;
       document.body.appendChild(link);
@@ -114,18 +114,18 @@ export default function Home() {
         </div>
       )}
 
-      <h1 className="text-4xl font-bold">RAR File Opener Online</h1>
+      <h1 className="text-4xl font-bold">RAR File Extractor Online</h1>
       <p className="text-sm mt-4">
-        Extract RAR files effortlessly with our free and secure online Unrar Now
-        tool. No software installation required. Compatible with Windows, Mac,
-        Android, and iOS. More over it is Blazzzzzingly fast.
+        Easily extract RAR files with our free and secure Unrar Now tool—no
+        software installation needed. Compatible with Windows, Mac, Android, and
+        IOS. More over it is Blazzzzingly fast.
       </p>
 
       <section className="mt-8">
         <h2 className="text-2xl font-semibold">Upload file</h2>
         <p className="text-sm mt-2">
-          Please use the form below to extract the contents of your .rar file.
-          This will allow you to access and view the files from the archive.
+          To access the files from your .rar archive, simply use the form below
+          to extract its contents.
         </p>
         <div
           className="mt-4 border-2 border-dashed border-gray-300 bg-gray-100 rounded-md p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50"
@@ -181,7 +181,7 @@ export default function Home() {
                   href={URL.createObjectURL(
                     new Blob([file.extraction || ""], {
                       type: "application/octet-stream",
-                    })
+                    }),
                   )}
                   download={file.fileHeader.name}
                   className="text-blue-600 underline hover:text-blue-800"
@@ -200,25 +200,79 @@ export default function Home() {
           <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
             <h3 className="text-xl font-semibold">🆓 Free</h3>
             <p className="text-sm mt-2">
-              The online service provided on this website is completely free of
-              charge. There are no hidden costs or fees associated with using
-              our web-app.
+              We offer a fully free online service, with no hidden costs or fees
+              associated with the web app.
+            </p>
+          </div>
+          <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <h3 className="text-xl font-semibold">🗂️ Multiple RAR Formats</h3>
+            <p className="text-sm mt-2">
+              We ensure compatibility with various RAR formats, supporting files
+              compressed by different algorithms.
+            </p>
+          </div>
+          <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <h3 className="text-xl font-semibold">
+              📱 Cross-Platform Compatibility
+            </h3>
+            <p className="text-sm mt-2">
+              Access our platform and unarchive RAR files on any
+              internet-connected device, including Mac, Windows, Linux, iPhone,
+              or Android.
+            </p>
+          </div>
+          <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <h3 className="text-xl font-semibold">💡 Easy and Convenient</h3>
+            <p className="text-sm mt-2">
+              Our online service offers a convenient, software-free solution for
+              extracting RAR files.
+            </p>
+          </div>
+          <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <h3 className="text-xl font-semibold">🔒 Secure and Private</h3>
+            <p className="text-sm mt-2">
+              Your privacy and security are our top priorities. All RAR file
+              extraction processes are carried out through a secure connection
+              to ensure the safety of your files and personal information.
+            </p>
+          </div>
+          <div className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <h3 className="text-xl font-semibold">👁️ File Preview</h3>
+            <p className="text-sm mt-2">
+              We provide a preview feature that allows you to inspect the
+              contents of a RAR file before extracting, enabling you to select
+              the files you want to extract.
             </p>
           </div>
           {/* Add more feature sections */}
         </div>
       </section>
 
-      <section className="mt-8">
+      <section className="mt-8 mb-8">
         <h2 className="text-2xl font-semibold">FAQ</h2>
         <ul className="mt-4 space-y-4">
           <li className="border border-gray-300 bg-gray-100 rounded-md p-4">
             <div className="font-semibold">What is a RAR file?</div>
             <p className="text-sm mt-2">
-              A RAR file is a compressed archive file format that supports data
-              compression, error recovery, and file spanning. It is used to
-              bundle multiple files into a single file for easier distribution
-              and storage.
+              A RAR file is a compressed archive format used to store one or
+              more files in a compressed state. RAR stands for 'Roshal Archive,'
+              named after its creator, Eugene Roshal. It is a proprietary format
+              commonly associated with the WinRAR software, which is widely used
+              to create and extract RAR files.
+            </p>
+          </li>
+          <li className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <div className="font-semibold">How to unzip a RAR file?</div>
+            <p className="text-sm mt-2">
+              The easiest way to extract RAR files is to use our website. It's
+              free, simple, and secure—no software download or purchase
+              required.
+            </p>
+          </li>
+          <li className="border border-gray-300 bg-gray-100 rounded-md p-4">
+            <div className="font-semibold">Do you store my RAR file?</div>
+            <p className="text-sm mt-2">
+              No, we do not store your RAR files or their extracted contents.
             </p>
           </li>
           {/* Add more FAQ items */}
